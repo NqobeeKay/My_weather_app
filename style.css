@@ -16,7 +16,7 @@ body {
   border-radius: 6px;
   width: 80%;
   font-size: 16px;
-  padding: 15ox 20px;
+  padding: 15px 30px;
 }
 .search-form-button {
   background-color: crimson;
@@ -59,7 +59,7 @@ main {
   color: rgba(39, 33, 66, 0.4);
   font-weight: 500;
 }
-.weather-app-detail strong {
+strong {
   color: #f65282;
 }
 .weather-app-temperature-container {
