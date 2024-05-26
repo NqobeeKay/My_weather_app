@@ -1,20 +1,18 @@
-function updateWeather(response) {
-  let temperatureElement = document.quarySelector("#temperature");
-  let temperature = response.data.temperature.current;
-  let cityElement = document.quarySelector("#city");
+function displayTemperature(response) {
+  let temperatureElement = document.querySelector("#temperature");
+  let temperature = Math.round(response.data.temperature.current);
+  let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.city;
-  temperatureElement.innerHTML = Math.round(temperature);
-}
-function searchCity(city) {
-  let apiKey = "5d12c54o9b4080bae8eb90tf5232b23b";
-  let apiUrl =
-    "https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}";
-  axios.get(apiUrl).then(updateWeather);
+  temperatureElement.innerHTML = temperature;
 }
 function search(event) {
   event.preventDefault();
-  let searchInput = document.quarySelector("#search-form-input");
+  let searchInputElement = document.querySelector("#search-form-input");
+  let city = searchInputElement.value;
+  let apiKey = "5d12c54o9b4080bae8eb90tf5232b23b";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayTemperature);
 }
-let searchFormElement = document.quarySelector("#search-form");
-searchFormElement.addEventListener("submit", search);
-searchCity("Paris");
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", search);
