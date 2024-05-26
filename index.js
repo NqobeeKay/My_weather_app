@@ -14,8 +14,8 @@ function displayTemperature(response) {
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = formatDate(date);
   descriptionElement.innerHTML = response.data.condition.description;
-  humidityElement.innerHTML = "${response.data.temperature.humidity}%";
-  windspeedElement.innerHTML = "${response.data.wind.speed}km/h";
+  humidityElement.innerHTML = response.data.temperature.humidity + "%";
+  windspeedElement.innerHTML = response.data.wind.speed + "km/h";
   temperatureElement.innerHTML = temperature;
 }
 
@@ -34,9 +34,9 @@ function formatDate(date) {
   let day = days[date.getDay];
 
   if (minutes < 10) {
-    minutes = "0${minutes}";
+    minutes = "0" + minutes;
   }
-  return "${day} ${hours}:${minutes}";
+  return day + " " + hours + ":" + minutes;
 }
 
 function search(event) {
