@@ -1,9 +1,17 @@
 body {
-  background-color: #f9f7fe;
+  background: linear-gradient(
+    111.1deg,
+    rgb(0, 40, 70) -4.8%,
+    rgb(255, 115, 115) 82.7%,
+    rgb(255, 175, 123) 97.2%
+  );
   font-family: "Playfair Display", serif;
+  background-size: cover;
+  overflow: hidden;
 }
 .weather-app {
-  background-color: aquamarine;
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/128/541/original/4d900553f838143a0f6a07eafc9ace16.gif?1717970382");
+  background-size: cover;
   max-width: 600px;
   margin: 50px auto;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
