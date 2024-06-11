@@ -43,7 +43,10 @@ function formatDate(date) {
 function search(event) {
   event.preventDefault();
   let searchInputElement = document.querySelector("#search-form-input");
-  let city = searchInputElement.value;
+  searchCity(searchInputElement.value);
+}
+
+function searchCity(city) {
   let apiKey = "5d12c54o9b4080bae8eb90tf5232b23b";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
@@ -92,3 +95,4 @@ function displayForecast(response) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 displayForecast();
+searchCity("Paris");
